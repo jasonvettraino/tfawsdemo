@@ -11,7 +11,7 @@ pipeline {
                 sh "ls"
                 sh '''
                     curl -o tf.zip https://releases.hashicorp.com/terraform/1.0.1/terraform_1.0.1_linux_arm64.zip ; yes | unzip tf.zip
-                        ls
+                        ls terraform
                         ./terraform version
                 '''
             }
