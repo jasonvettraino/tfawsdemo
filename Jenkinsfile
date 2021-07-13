@@ -8,24 +8,23 @@ pipeline {
     stages {
         stage('Prep') {
             steps {
-                sh "cd tf"
                 sh "ls"
                 sh "terraform version"
             }
         }
         stage('Terraform Init') {
             steps {
-                sh "terraform init"
+                sh "terraform -chdir=tf init"
             }
         }
         stage('Terraform Plan') {
             steps {
-                sh "terraform plan"
+                sh "terraform -chdir=tf plan"
             }
         }
         stage ('Terraform Apply') {
             steps {
-                sh "terraform apply -auto-approve"
+                sh "terraform -chdir=tf apply -auto-approve"
             }
         }
     }
