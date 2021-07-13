@@ -8,13 +8,13 @@ pipeline {
     stages {
         stage('Prep') {
             steps {
+                sh "cd tf"
                 sh "ls"
                 sh "terraform version"
             }
         }
         stage('Terraform Init') {
             steps {
-                sh "touch main.tf"
                 sh "terraform init"
             }
         }
