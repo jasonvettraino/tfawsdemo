@@ -9,8 +9,18 @@ variable "profile" {
   type        = string
   default     = "Capgemini-Terraform"
 }
+variable "aws_access_key" {
+  description = "AWS Profile"
+  type        = string
+  default     = ""
+}
+variable "aws_secret_key" {
+  description = "AWS Profile"
+  type        = string
+  default     = ""
+}
 variable "env_prefix" {
-  description = "Namin gprefix"
+  description = "Naming prefix"
   type        = string
   default     = "demo"
 }
