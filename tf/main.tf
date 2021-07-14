@@ -11,7 +11,7 @@ provider "aws" {
   # Configuration options
   region  = var.region
   access_key = "$ACCESSKEY"
-  secret_key = "SECRETKEY"
+  secret_key = "$SECRETKEY"
 }
 
 module "vpc" {
