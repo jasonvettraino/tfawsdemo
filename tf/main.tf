@@ -10,8 +10,8 @@ terraform {
 provider "aws" {
   # Configuration options
   region  = var.region
-  access_key = "$ACCESSKEY"
-  secret_key = "$SECRETKEY"
+  access_key = "$(ACCESSKEY)"
+  secret_key = "$(SECRETKEY)"
 }
 
 module "vpc" {
