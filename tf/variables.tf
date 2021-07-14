@@ -7,7 +7,7 @@ variable "region" {
 variable "profile" {
   description = "AWS Profile"
   type        = string
-  default     = ""
+  default     = "Capgemini-Terraform"
 }
 variable "env_prefix" {
   description = "Namin gprefix"
