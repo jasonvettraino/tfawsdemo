@@ -28,8 +28,10 @@ pipeline {
         }
         stage('Terraform Plan') {
             steps {
-                sh 'echo $SECRETKEY'
-                sh "terraform -chdir=tf plan"
+                withCredentials([usernamePassword(credentialsId: 'AWS_Credentials', usernameVariable: 'ACCESSKEY', passwordVariable: 'SECRETKEY')]) {
+                    sh 'echo $SECRETKEY'
+                    sh "terraform -chdir=tf plan"
+                }
             }
         }
         stage ('Terraform Apply') {
