@@ -36,7 +36,7 @@ pipeline {
         }
         stage ('Terraform Apply') {
             steps {
-                sh "terraform -chdir=tf apply -auto-approve"
+                sh "terraform -chdir=tf apply -auto-approve -var 'aws_access_key=$ACCESSKEY' -var 'aws_secret_key=$SECRETKEY' "
             }
         }
     }
