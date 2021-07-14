@@ -37,7 +37,7 @@ pipeline {
         stage ('Terraform Apply') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'AWS_Credentials', usernameVariable: 'ACCESSKEY', passwordVariable: 'SECRETKEY')]) {
-                    sh "terraform -chdir=tf apply -auto-approve -var 'aws_access_key=$ACCESSKEY' -var 'aws_secret_key=$SECRETKEY' plan tf.plan"
+                    sh "terraform -chdir=tf apply -var 'aws_access_key=$ACCESSKEY' -var 'aws_secret_key=$SECRETKEY' plan tf.plan"
                 }
             }
         }
