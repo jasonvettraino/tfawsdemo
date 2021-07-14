@@ -36,7 +36,7 @@ pipeline {
         }
         stage ('Terraform Apply') {
             steps {
-                sh "terraform -chdir=tf apply plan tf.plan"
+                sh "terraform -chdir=tf apply tf.plan"
             }
         }
     }
