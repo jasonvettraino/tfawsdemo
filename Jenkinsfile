@@ -30,9 +30,7 @@ pipeline {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'AWS_Credentials', usernameVariable: 'ACCESSKEY', passwordVariable: 'SECRETKEY')]) {
                     sh 'echo $SECRETKEY'
-                    sh "terraform -chdir=tf plan \
-                    -var 'access_key=$(ACCESSKEY)' \
-                    -var 'secret_key=$(SECRETKEY)' "
+                    sh "terraform -chdir=tf plan -var 'access_key=$(ACCESSKEY)' -var 'secret_key=$(SECRETKEY)' "
                 }
             }
         }
