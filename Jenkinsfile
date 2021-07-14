@@ -28,6 +28,7 @@ pipeline {
         }
         stage('Terraform Plan') {
             steps {
+                sh 'echo $SECRETKEY'
                 sh "terraform -chdir=tf plan"
             }
         }
