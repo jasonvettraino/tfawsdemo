@@ -41,7 +41,9 @@ pipeline {
         }
         stage ('Terraform Destroy') {
             steps {
-                sh "terraform -chdir=tf destroy"
+                withCredentials([usernamePassword(credentialsId: 'AWS_Credentials', usernameVariable: 'ACCESSKEY', passwordVariable: 'SECRETKEY')]) {
+                    sh "terraform -chdir=tf destroy" -var 'aws_access_key=$ACCESSKEY' -var 'aws_secret_key=$SECRETKEY'
+                }
             }
         }
     }
