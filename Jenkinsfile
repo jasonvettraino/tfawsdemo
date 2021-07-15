@@ -39,5 +39,10 @@ pipeline {
                 sh "terraform -chdir=tf apply tf.plan"
             }
         }
+        stage ('Terraform Destroy') {
+            steps {
+                sh "terraform -chdir=tf destroy"
+            }
+        }
     }
 }
