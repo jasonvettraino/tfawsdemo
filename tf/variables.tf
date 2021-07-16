@@ -22,14 +22,14 @@ variable "aws_secret_key" {
 variable "env_prefix" {
   description = "Naming prefix"
   type        = string
-  default     = "demo"
+  default     = "demo2"
 }
 variable "tags" {
   description = "resource tags"
   type        = map(any)
   default = {
     CostCentre  = "common"
-    Project     = "demo"
+    Project     = "demo2"
     Description = "Demonstration"
     Owner       = "Jason"
   }
