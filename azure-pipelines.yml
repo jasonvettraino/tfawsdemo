@@ -23,3 +23,11 @@ steps:
     ls
     terraform version
   displayName: 'Prep'
+
+- script: |
+    terraform init
+  displayName: 'Terraform Init'
+
+- script: |
+    terraform plan
+  displayName: 'Terraform Plan'
