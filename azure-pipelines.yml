@@ -25,9 +25,9 @@ steps:
   displayName: 'Prep'
 
 - script: |
-    terraform init
+    terraform -chdir=tf init
   displayName: 'Terraform Init'
 
 - script: |
-    terraform plan
+    terraform -chdir=tf plan -var 'aws_access_key=$(Username)' -var 'aws_secret_key=$(SecretKey)' -out=tf.plan
   displayName: 'Terraform Plan'
